@@ -9,10 +9,8 @@ import java.util.LinkedList;
 public class PerformanceTest {
 
     public static void main(String[] args) {
-        int[] size = new int[] {1000, 5000, 50000};
-        System.out.println("-------------------------------------------");
+        int[] size = new int[] {1000, 5000, 100000};
         System.out.println("\t | List size | ArrayList | LinkedList |");
-        System.out.println("-------------------------------------------");
         for (int i = 0; i < 3; i++){
             ArrayList<Integer> arrayList = new ArrayList<>();
             LinkedList<Integer> linkedList = new LinkedList<>();
@@ -24,7 +22,6 @@ public class PerformanceTest {
             System.out.print("|");
             System.out.printf("%12d", new CheckTime().addCheckTime(linkedList, size[i]));
             System.out.println("|");
-            System.out.println("-------------------------------------------");
 
             System.out.print("Get  | ");
             System.out.printf("%8d", size[i]);
@@ -33,7 +30,6 @@ public class PerformanceTest {
             System.out.print("|");
             System.out.printf("%12d", new CheckTime().getCheckTime(linkedList,  size[i]));
             System.out.println("|");
-            System.out.println("-------------------------------------------");
 
             System.out.print("Del  | ");
             System.out.printf("%8d", size[i]);
@@ -42,7 +38,6 @@ public class PerformanceTest {
             System.out.print("|");
             System.out.printf("%12d", new CheckTime().deleteCheckTime(linkedList,  size[i]));
             System.out.println("|");
-            System.out.println("-------------------------------------------");
             System.out.println("-------------------------------------------");
         }
     }
